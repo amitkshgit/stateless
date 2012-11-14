@@ -19,7 +19,7 @@ class SessionSaveHandler {
     
     public function open($savePath, $sessionName) {
         $this->mc = new Memcache();
-        $this->mc->connect($memcachedhost, 11211);
+        $this->mc->connect('localhost', 11211);
         return true;
     }
  
