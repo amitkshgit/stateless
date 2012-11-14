@@ -15,6 +15,7 @@ phpize
 make
 make install
 vi /etc/php.ini 
+echo extension = "memcache.so" >> /etc/php.ini
 cd /var/www
 cd html
 git init
