@@ -1,4 +1,3 @@
-stateless
-=========
+MAKE SURE YOU SET ALL PARAMETERS PROPERLY IN config.inc
 
-AWS Stateless applications demo - memcached and DynamoDB
+ALSO MAKE SURE THAT file.sql IS EXECUTED AGAINST A RUNNING MYSQL DATABASE. THIS CREATED THE ENTIRE SCHEMA.
