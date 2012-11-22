@@ -27,5 +27,8 @@ service mysqld restart
 service memcached restart
 
 KNOWN BUG - 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e888d64d8bfc4ffca174f16cde1c0c09471b6ca4
 1. Configuring localhost for memcache in config.inc does now work and has to be manually configured in sesstest.php
