@@ -25,3 +25,6 @@ mysql -u root -p aws < file.sql
 service httpd restart
 service mysqld restart
 service memcached restart
+
+KNOWN BUG - 
+1. Configuring localhost for memcache in config.inc does now work and has to be manually configured in sesstest.php
