@@ -23,11 +23,12 @@ service memcached restart ; mysql -u root < /var/www/html/stateless/memcache/fil
 
 For Memcached
 - Should work right away, but on a single node
-- To actually demo stateless app. Just change the localhost in memcache/memsess_withoutlock.php to another memcached host or Elasticache 
+- To actually demo stateless app. Just change the localhost in memcache/memsess_withoutlock.php to another memcached host or Elasticache   
+
 For DynamoDB - 
 
-- Configure the  Access credentials in /usr/share/sdk-1.5.17/config.inc.php (copy from config-sample.inc.php)
-- Make sure you have dynamodb table created with  name 'sessions'
+- Configure the  Access credentials in /usr/share/sdk-1.5.17/config.inc.php (copy from config-sample.inc.php)  
+- Make sure you have dynamodb table created with  name 'sessions'  
 
 KNOWN BUG - 
 1. localhost for memcache is not passed through config.in and is manually configured right now. 
