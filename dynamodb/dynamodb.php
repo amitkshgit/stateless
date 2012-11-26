@@ -1,6 +1,6 @@
 <?php
 
-require_once 'AWSSDKforPHP/sdk.class.php';
+require_once '/usr/share/sdk-1.5.17/sdk.class.php';
 
 // Instantiate the Amazon DynamoDB client.
 // REMEMBER: You need to set 'default_cache_config' in your config.inc.php.
