@@ -30,48 +30,8 @@ For DynamoDB -
 - Configure the  Access credentials in /usr/share/sdk-1.5.17/config.inc.php (copy from config-sample.inc.php)  
 - Make sure you have dynamodb table created with  name 'sessions'  
 
-KNOWN BUG - 
+KNOWN BUG -   
 1. localhost for memcache is not passed through config.in and is manually configured right now. 
 
-Warning - 
-1. root is default user for connecting to mysql databases. Change it to something other than root. 
-
-Pass the following as user-data when launching the EC2 Instance - 
-
-#!/bin/bash
-yum -y update
-
-yum -y install httpd php php-devel mysql mysql-server php-mysql memcached gcc zlib-devel make git
-cd /usr/src
-
-wget http://pecl.php.net/get/memcache-2.2.5.tgz
-
-tar zxvf memcache-2.2.5.tgz
-
-cd memcache-2.2.5
-
-phpize
-
-./configure
-
-make
-
-make install
-
-echo extension = "memcache.so" >> /etc/php.ini
-
-cd /var/www/html ; git init
-
-git clone git://github.com/amitkshgit/stateless.git
-
-service httpd restart
-
-service mysqld restart
-
-service memcached restart ; mysql -u root < /var/www/html/stateless/memcache/file.sql
-
-
----------
-
-
-Note: Default username and password are admin1 and admin123 for the console
+Warning -   
+1. root is default user for connecting to mysql databases. Change it to something other than root.   
