@@ -46,6 +46,7 @@ For DynamoDB -
 1. Install the ASWSSDKforPHP http://aws.amazon.com/sdkforphp/
 2. Configure the  Access credentials 
 3. Configure the right path in dynamodb.php
+4. Make sure you have dynamodb table created with  name 'sessions'
 
 Pass the following as user-data when launching the EC2 Instance - 
 
