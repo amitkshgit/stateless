@@ -86,4 +86,4 @@ service memcached restart ; mysql -u root < /var/www/html/stateless/memcache/fil
 ---------
 
 
-Note: Default username and password are admin and admin123 for the console
+Note: Default username and password are admin1 and admin123 for the console
