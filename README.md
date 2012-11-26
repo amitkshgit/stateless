@@ -1,7 +1,7 @@
 Pass the following as user-data when EC2 instance in being launched - 
 
 #!/bin/bash
-yum -y update
+yum -y update \n
 yum -y install httpd php php-devel mysql mysql-server php-mysql php-xml memcached gcc zlib-devel make git
 cd /usr/src
 wget http://pecl.php.net/get/memcache-2.2.5.tgz
