@@ -6,6 +6,7 @@ require_once '/usr/share/sdk-1.5.17/sdk.class.php';
 // REMEMBER: You need to set 'default_cache_config' in your config.inc.php.
 error_log("dynamodb - Starting Dynamodb instance");
 $dynamodb = new AmazonDynamoDB();
+$dynamodb->set_region('ec2.sa-east-1.amazonaws.com');
 error_log("dynamodb - Started Dynamodb instance");
 
 // Register the DynamoDB Session Handler.
