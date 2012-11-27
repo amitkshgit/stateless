@@ -6,7 +6,7 @@ yum -y install httpd php php-devel mysql mysql-server php-mysql php-xml memcache
 cd /usr/src  
 wget http://pecl.php.net/get/memcache-2.2.5.tgz  
 tar zxvf memcache-2.2.5.tgz  
-cd memcached-2.2.5  
+cd memcache-2.2.5  
 phpize  
 ./configure  
 make  
