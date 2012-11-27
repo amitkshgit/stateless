@@ -12,8 +12,8 @@ phpize
 make  
 make install  
 echo extension = "memcache.so" >> /etc/php.ini  
-cd /usr/share ; wget http://pear.amazonwebservices.com/get/sdk-latest.zip  
-unzip sdk-latest.zip  
+cd /usr/share ;mkdir aws; cd aws;  wget http://pear.amazonwebservices.com/get/sdk-latest.zip  
+unzip sdk-latest.zip  ; rm -f sdk-latest.zip ; ln -s `ls /usr/share/aws` sdk-latest
 cd /var/www/html ; git init  
 git clone git://github.com/amitkshgit/stateless.git  
 service httpd restart  
