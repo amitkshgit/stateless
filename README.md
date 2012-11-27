@@ -28,9 +28,9 @@ For Memcached
 
 For DynamoDB - 
 
-- http://EC2URL/stateless/dynamodb/   - Default user: admin1 password: admin123
 - Configure the  Access credentials in /usr/share/aws/sdk-latest/config.inc.php (copy from config-sample.inc.php)  
 - Make sure you have dynamodb table created with  name 'sessions'  
+- http://EC2URL/stateless/dynamodb/   - Default user: admin1 password: admin123
 
 KNOWN BUG -   
 1. localhost for memcache is not passed through config.in and is manually configured right now. 
