@@ -3,7 +3,6 @@
 require_once '/usr/share/aws/sdk-latest/sdk.class.php';
 
 // Instantiate the Amazon DynamoDB client.
-// REMEMBER: You need to set 'default_cache_config' in your config.inc.php.
 error_log("dynamodb - Starting Dynamodb instance");
 $dynamodb = new AmazonDynamoDB();
 $dynamodb->set_region('ec2.sa-east-1.amazonaws.com');
