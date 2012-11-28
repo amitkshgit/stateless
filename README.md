@@ -29,7 +29,7 @@ For Memcached
 For DynamoDB - 
 
 - Configure the  Access credentials in /usr/share/aws/sdk-latest/config.inc.php (copy from config-sample.inc.php)  
-- Make sure you have dynamodb table created with  name 'sessions'  
+- Make sure you have dynamodb table created with  name 'sessions' in Singapore
 - http://EC2URL/stateless/dynamodb/   - Default user: admin1 password: admin123
 
 KNOWN BUG -   
