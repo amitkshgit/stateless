@@ -5,7 +5,7 @@ require_once '/usr/share/aws/sdk-latest/sdk.class.php';
 // Instantiate the Amazon DynamoDB client.
 error_log("dynamodb - Starting Dynamodb instance");
 $dynamodb = new AmazonDynamoDB();
-$dynamodb->set_region('ec2.sa-east-1.amazonaws.com');
+$dynamodb->set_region('dynamodb.ap-southeast-1.amazonaws.com');
 error_log("dynamodb - Started Dynamodb instance");
 
 // Register the DynamoDB Session Handler.
