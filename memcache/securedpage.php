@@ -3,11 +3,11 @@
 include('config.inc');
 include('memsess_withoutlock.php');
 $a = session_id();
-print "Before Session Start Sessid: $a<br>";
+print "SessionId: $a<br>";
 // Inialize session
 session_start();
-$a = session_id();
-print "After Session Start Sessid: $a<br>";
+//$a = session_id();
+//print "After Session Start Sessid: $a<br>";
 $memcache = new Memcache;
 $memcache->connect($memcachedhost, 11211) or die ("Could not connect"); //connect to memcached server
 // Check, if username session is NOT set then this page will jump to login page
@@ -25,8 +25,9 @@ header('Location: index.php?reason=2');
 
 <body>
 
-<p>This is secured page with session: <b><?php echo $_SESSION['username']; ?></b>
-<br>You can put your restricted information here.</p>
+<p>This is secured page with session: <b><?php echo $_SESSION['username']; ?></b></p>
+<?php $instanceid = file_get_contents("http://169.254.169.254/latest/meta-data/instance-id"); ?>
+<p> InstanceID: <b><?php echo $instanceid; ?> </p> </b>
 
 <script type="text/javascript">
 
@@ -45,6 +46,7 @@ window.location.href = url;
 
 </script>
 
+Select Region: 
 <select onchange="selectRegion(this.selectedIndex-1)">
 <option>---</option>
 <option>Virginia</option>
@@ -56,6 +58,7 @@ window.location.href = url;
 <option>Brazil</option>
 <option>Australia</option>
 </select>
+<br>
 
 <?php
 if(isset($_GET['region'])){
@@ -77,7 +80,7 @@ print "<tr><td>$frommemc</td> $line </tr>";
 $frommemc = 0;
 $query = "SELECT * from instances where region = '$region'";
 $result = mysql_query($query);
-print "RES: $result";
+//print "RES: $result";
 while($row = mysql_fetch_array($result))
   {
 $line = "<td> ".$row['instanceid']."</td><td>".$row['state']."</td><td>".$row['type']."</td><td>".$row['az']."</td><td>".$row['dnsname']."</td><td>".$row['publicip']."</td>";
@@ -92,6 +95,12 @@ mysql_close();
 }
 
 ?>
+
+<br> Write something to Session <?php echo $a; ?>: 
+<form method="post" action="wrsession.php">
+<input type=text value="" name=key> <input type=text value="" name=value>
+<input type=submit value=Submit>
+</form>
 
 <p><a href="logout.php">Logout</a></p>
 
