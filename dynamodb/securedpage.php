@@ -2,12 +2,12 @@
 
 include('config.inc');
 include('dynamodb.php');
-$a = session_id();
-print "Before Session Start Sessid: $a<br>";
 // Inialize session
 session_start();
 $a = session_id();
-print "After Session Start Sessid: $a<br>";
+print "SessionId: $a<br>";
+//$a = session_id();
+//print "After Session Start Sessid: $a<br>";
 $memcache = new Memcache;
 $memcache->connect('127.0.0.1', 11211) or die ("Could not connect"); //connect to memcached server
 // Check, if username session is NOT set then this page will jump to login page
@@ -25,8 +25,9 @@ header('Location: index.php?reason=2');
 
 <body>
 
-<p>This is secured page with session: <b><?php echo $_SESSION['username']; ?></b>
-<br>You can put your restricted information here.</p>
+<p>This is secured page with session: <b><?php echo $_SESSION['username']; ?></b></p>
+<?php $instanceid = file_get_contents("http://169.254.169.254/latest/meta-data/instance-id"); ?>
+<p> InstanceID: <b><?php echo $instanceid; ?> </p> </b>
 
 <script type="text/javascript">
 
@@ -91,6 +92,12 @@ mysql_close();
 }
 
 ?>
+
+<br> Write something to Session <?php echo $a; ?>:
+<form method="post" action="wrsession.php">
+<input type=text value="" name=key> <input type=text value="" name=value>
+<input type=submit value=Submit>
+</form>
 
 <p><a href="logout.php">Logout</a></p>
 

@@ -11,7 +11,8 @@ error_log("dynamodb - Started Dynamodb instance");
 // Register the DynamoDB Session Handler.
 error_log("dynamodb - Defining handler");
 $handler = $dynamodb->register_session_handler(array(
-    'table_name' => 'sessions'
+    'table_name' => 'sessions',
+    'hash_key'             => 'id'
 ));
 error_log("dynamodb - Handler obtained");
 
