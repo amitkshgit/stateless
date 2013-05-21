@@ -24,12 +24,17 @@ service memcached restart ; mysql -u root < /var/www/html/stateless/memcache/fil
 For Memcached
 - http://EC2URL/stateless/memcache/   - Default user: admin1 password: admin123
 - Should work right away, but on a single node
-- To actually demo stateless app. Just change the localhost in memcache/memsess_withoutlock.php to another memcached host or Elasticache   
+- To actually demo stateless app. 
+	- Change the localhost in memcache/memsess_withoutlock.php and config.inc to another memcached host or Elasticache   
+	
 
 For DynamoDB - 
 
 - Configure the  Access credentials in /usr/share/aws/sdk-latest/config.inc.php (copy from config-sample.inc.php)  
-- Make sure you have dynamodb table created with  name 'sessions' in Singapore
+- Make sure you have dynamodb table created  as under in Singapore - 
+	- Table Name - 'sessions'
+	- Primary Key Type set to Hash 
+	- Hash Attribute Name - 'id' 
 - http://EC2URL/stateless/dynamodb/   - Default user: admin1 password: admin123
 
 KNOWN BUG -   
