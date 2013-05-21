@@ -25,7 +25,7 @@ For Memcached
 - http://EC2URL/stateless/memcache/   - Default user: admin1 password: admin123
 - Should work right away, but on a single node
 - To actually demo stateless app. 
-	- Change the localhost in memcache/memsess_withoutlock.php and config.inc to another memcached host or Elasticache   
+	- Change the localhost in /var/www/html/stateless/memcache/memsess_withoutlock.php and config.inc to another memcached host or Elasticache   
 	
 
 For DynamoDB - 
